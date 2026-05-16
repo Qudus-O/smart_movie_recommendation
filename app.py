@@ -9,7 +9,7 @@ from dotenv import load_dotenv  
 import os
 
 
-st.set_page_config(page_title="Movie_Recommendation System", layout="wide")
+st.set_page_config(page_title="Movie Recommendation System", layout="wide")
 load_dotenv()
 api_key = os.getenv("TMDB_API_KEY")
 
@@ -27,7 +27,7 @@ def get_smart_recommendation(title, genre=None, movies_df=movies, cosine_sim=cos
     if title_clean in all_titles:
         target_title = title_clean
     else:
-    # Scenario B: Exact match fails, check for fuzzy string matching match
+    # Scenario B: Exact match fails, check for fuzzy string matching 
         matches = difflib.get_close_matches(title_clean, all_titles, n=1, cutoff=0.6)
         if matches:
             target_title = matches[0]
@@ -77,7 +77,7 @@ def get_movie_poster(movie_title):
     return "https://via.placeholder.com/500x750?text=Poster+Not+Found"
 
 
-# --- FRONTEND UI DESIGN ---
+# FRONTEND
 st.title(" Smart Movies Recommendation System")
 st.markdown("Discover movies based on title and genre.")
 st.hr()
@@ -86,7 +86,7 @@ st.hr()
 col_input1, col_input2 = st.columns([2, 1])
 
 with col_input1:
-    # FIX 1: Added placeholder text to guide users on expected input format
+    # FIX 1: Added placeholder text to guide users on the expected input format
     user_movie_input = st.text_input("Enter a movie title (Compulsory):", placeholder="e.g., Toy Story, Mortal Kombat..")
 
 with col_input2:
