@@ -9,7 +9,7 @@ from dotenv import load_dotenv  
 import os
 
 
-st.set_page_config(page_title="CineMatch Engine", layout="wide")
+st.set_page_config(page_title="Movie_Recommendation System", layout="wide")
 load_dotenv()
 api_key = os.getenv("TMDB_API_KEY")
 
