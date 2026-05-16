@@ -35,12 +35,29 @@ The system processes movie metadata and handles user inputs through a defined fo
 
 ##  How to Run This Project Locally
 
-Follow these steps to set up and run the interactive web application on your computer.
-
-### Prerequisites
-
+Follow these two steps to set up and run the interactive web application on your computer.
 Make sure you have **Python 3.10+** installed on your system.
 
+---
+## STEP A
+
+
+### Generate the Model File (.pkl)
+
+The final trained model file is large; it's not stored on GitHub. Instead, you will generate it on your own machine using the included dataset:
+
+1. Open your terminal in the project folder and start Jupyter Notebook:
+```bash
+jupyter notebook
+
+```
+
+2. Open `Recommendation_System.ipynb`.
+3. Add the dataset (**`movie.csv`**) to your coding environment. Run all the cells sequentially. This script will automatically read the dataset, clean the movie genres, build the mathematical similarity map, and save the `smart_movies_recommendation.pkl` file directly into your project folder.
+
+---
+
+## STEP B
 ### 1. Clone the Repository
 
 Open your terminal or command prompt and clone this project:
@@ -88,6 +105,7 @@ TMDB_API_KEY=your_actual_api_key_here
 ```
 
 ### 5. Launch the Web Application
+Note: Make sure the `.pkl` file is in your file directory.
 
 Run the Streamlit frontend script to spin up the local server:
 
